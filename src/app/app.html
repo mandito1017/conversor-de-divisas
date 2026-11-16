@@ -1,0 +1,38 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>DivisApp 24000104</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Conversor de divisas</ion-card-title>
+        <ion-card-subtitle>Quetzales (GTQ) a Dólares (USD)</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-note>Tipo de cambio: Q{{ tasaCambio | number:'1.2-2' }} por US$1.00</ion-note>
+
+        <ion-item class="campo">
+          <ion-input type="number" label="Cantidad en quetzales (Q)" labelPlacement="stacked"
+            placeholder="Ej. 100.00" [(ngModel)]="quetzales" (keyup.enter)="convertir()"></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" (click)="convertir()">Convertir</ion-button>
+        <ion-button expand="block" fill="outline" (click)="limpiar()">Limpiar</ion-button>
+
+        @if (error) {
+          <ion-text color="danger"><p class="error">{{ error }}</p></ion-text>
+        }
+
+        @if (dolares !== null) {
+          <div class="resultado">
+            <p>Q{{ quetzales | number:'1.2-2' }} equivalen a</p>
+            <h1>US${{ dolares | number:'1.2-2' }}</h1>
+          </div>
+        }
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-app>

@@ -1,0 +1,8 @@
+.campo { margin: 16px 0; }
+.error { margin-top: 12px; }
+.resultado {
+  margin-top: 20px; padding: 16px; border-radius: 12px; text-align: center;
+  background: var(--ion-color-primary); color: #fff;
+  p { margin: 0; font-size: 15px; }
+  h1 { margin: 6px 0 0; font-size: 30px; font-weight: 700; }
+}
